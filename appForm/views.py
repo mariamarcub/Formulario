@@ -4,7 +4,6 @@ def index(request):
     return render(request, 'appForm/index.html', {})
 
 
-
 def formulario(request):
     # Si se ha enviado el formulario
     formulario_form = CreaFormularioForm()
