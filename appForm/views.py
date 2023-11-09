@@ -7,7 +7,8 @@ def index(request):
 def formulario(request):
     # Si se ha enviado el formulario
     formulario_form = CreaFormularioForm()
-    if request.method == 'GET':
+    if request.method == 'GET' and request.GET: #El and request.GET tengo que ponerlo para que no salga los mensajes de campo obligatorio
+
         formulario_form = CreaFormularioForm(request.GET)
         # Ejecutamos la validacion
         if formulario_form.is_valid():
