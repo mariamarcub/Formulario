@@ -30,7 +30,8 @@ class CreaFormularioForm(forms.Form):
                                      #con AND vemos que ambas son verdaderas
             if fechaFin < fechaInicio:
                 raise forms.ValidationError("Error: No puede ser la fecha final anterior a la inicial. Debe ser igual o superior a la fecha inicial.")
-        if diasSemana:
+
+        if diasSemana: #Indicamos que no es NONE, que tiene un valor
             if len(diasSemana)<1 or len(diasSemana)>3:
                 raise forms.ValidationError("Error: No puedes seleccionar menos de 1 días y más de 3 días")
 
